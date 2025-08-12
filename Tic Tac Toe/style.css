@@ -1,0 +1,145 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at top, #0a0f24, #000000);
+  color: white;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title */
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.2rem;
+  color: #00f5ff;
+  text-shadow: 0 0 15px #00f5ff, 0 0 30px #00c3ff;
+}
+
+/* Game Board */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+}
+
+/* Box Style */
+.box {
+  height: 100px;
+  width: 100px;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 3rem;
+  font-weight: bold;
+  background: #111;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s ease-in-out;
+}
+
+.box:hover:not(:disabled) {
+  transform: scale(1.08);
+  background: #1a1a1a;
+  box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+}
+
+/* Button Container */
+.btnContainer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Buttons */
+#resetbtn,
+#newGame {
+  padding: 0.7rem 1.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff00ff, #00f5ff);
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00f5ff, 0 0 30px #ff00ff;
+  transition: all 0.3s ease-in-out;
+}
+
+.newGame {
+  padding: 0.7rem 1.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff00ff, #00f5ff);
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00f5ff, 0 0 30px #ff00ff;
+  transition: all 0.3s ease-in-out;
+}
+
+.newGameHide {
+  display: none; /*Hide this button initially*/
+}
+
+#resetbtn:hover,
+#newGame:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #00f5ff, #ff00ff);
+  box-shadow: 0 0 20px #ff00ff, 0 0 40px #00f5ff;
+}
+
+/* Winner Message */
+.msg-container {
+  margin-bottom: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0.8rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px #ffdd57;
+  animation: popIn 0.4s ease;
+}
+
+#msg {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffdd57;
+  text-shadow: 0 0 15px #ffdd57;
+}
+
+/* Animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hide */
+.hide {
+  display: none;
+}
